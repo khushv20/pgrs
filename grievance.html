@@ -252,6 +252,188 @@
     color: #111111;
   }
 
+  /* Image placeholders */
+  .img-placeholder {
+    width: 100%;
+    background: #E8EDF2;
+    border: 2px solid #1F4E79;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .img-placeholder-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #1F4E79;
+  }
+
+  .img-flowchart {
+    height: 480px;
+    margin-top: 32px;
+  }
+
+  .img-atr {
+    height: 560px;
+  }
+
+  .img-atr + .img-atr {
+    margin-top: 20px;
+  }
+
+  .img-atr-stack {
+    margin-top: 24px;
+  }
+
+  .caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #595959;
+    margin-top: 14px;
+    max-width: 900px;
+    line-height: 1.6;
+  }
+
+  /* Two column layout */
+  .two-col {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .two-col > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .col-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+  }
+
+  .entry-list {
+    list-style: decimal;
+    padding-left: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #111111;
+  }
+
+  .entry-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .entry-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Tier blocks */
+  .tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tier-block {
+    border-left: 3px solid #1F4E79;
+    padding: 8px 0 8px 16px;
+  }
+
+  .tier-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1F4E79;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .tier-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  .tier-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #111111;
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+
+  /* Callout */
+  .callout {
+    border-left: 4px solid #1F4E79;
+    background: #EEF2F7;
+    padding: 24px;
+    margin-top: 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #111111;
+  }
+
+  /* Sub-headings */
+  .sub-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    line-height: 1.2;
+    color: #111111;
+    margin-top: 32px;
+  }
+
+  .sub-heading-lg-gap {
+    margin-top: 40px;
+  }
+
+  /* Decision cards */
+  .decision-list {
+    margin-top: 16px;
+  }
+
+  .decision-card {
+    padding: 32px 24px;
+    border-bottom: 1px solid #DDDDDD;
+  }
+
+  .decision-card:last-child {
+    border-bottom: none;
+  }
+
+  .decision-row + .decision-row {
+    margin-top: 20px;
+  }
+
+  .decision-row-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #1F4E79;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+  }
+
+  .decision-row-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #111111;
+    line-height: 1.6;
+  }
+
   /* Mobile */
   @media (max-width: 768px) {
     .container {
@@ -317,6 +499,27 @@
 
     .problem-card {
       min-width: 0;
+    }
+
+    .two-col {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .img-flowchart {
+      height: 320px;
+    }
+
+    .img-atr {
+      height: 380px;
+    }
+
+    .sub-heading {
+      font-size: 22px;
+    }
+
+    .decision-card {
+      padding: 24px 16px;
     }
   }
 </style>
@@ -386,6 +589,159 @@
       <div class="problem-card">
         <h3>The System Problem</h3>
         <p>No public record of performance. No pressure on districts or departments to improve. Senior officials had no reliable data on where the system was failing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 &mdash; SERVICE BLUEPRINT -->
+<section id="section-blueprint" class="section">
+  <div class="container">
+    <div class="section-label">02 &mdash; Service Blueprint</div>
+    <h2 class="section-title">Mapping the end-to-end service: six touchpoints, three escalation tiers, one integrated system.</h2>
+    <p class="section-body">The service blueprint maps the full citizen journey from first contact to resolution, showing both what the citizen experiences (front stage) and what happens invisibly behind it (back stage). The first design decision was how citizens would enter the service. Rather than a single channel, the blueprint shows six parallel touchpoints, each serving a different user journey and context. All six are treated as equivalent entry points. The second non-negotiable design decision was automatic escalation. Any service that requires a citizen to initiate an appeal has already failed them.</p>
+
+    <div id="placeholder-flowchart" class="img-placeholder img-flowchart">
+      <span class="img-placeholder-text">[Service Blueprint &mdash; image to be embedded]</span>
+    </div>
+    <p class="caption">End-to-end service blueprint for the Integrated Public Grievance Redress System, Governments of Haryana and Karnataka. Front stage shows citizen-facing touchpoints. Back stage shows GRO routing, IT escalation logic, and timeline enforcement.</p>
+
+    <div class="two-col">
+      <div>
+        <div class="col-heading">Six User Journey Entry Points</div>
+        <ol class="entry-list">
+          <li><strong>Bapuji Seva Kendra (BSK)</strong> &mdash; Physical facilitation centres for assisted filing, designed for citizens without digital access or mobility.</li>
+          <li><strong>Phone Helpline</strong> &mdash; Voice-based filing for citizens who cannot travel or write.</li>
+          <li><strong>Mobile Application and Website</strong> &mdash; Self-filing for digitally enabled citizens.</li>
+          <li><strong>Grievance Redress Officer (GRO)</strong> &mdash; Direct in-person filing with the responsible officer.</li>
+          <li><strong>Department Walk-In</strong> &mdash; Filing at the relevant department for citizens who know which agency is responsible.</li>
+          <li><strong>Social Audit Gram Sabha</strong> &mdash; Collective filing through public hearings for community-level grievances.</li>
+        </ol>
+      </div>
+      <div>
+        <div class="col-heading">Three Escalation Tiers</div>
+        <div class="tier-list">
+          <div class="tier-block">
+            <div class="tier-label">Tier 1 &mdash; 30 Days</div>
+            <div class="tier-heading">Grievance Redress Officer (GRO)</div>
+            <div class="tier-body">One level above the responsible delivery officer. Site visit and meeting with complainant required. If Action Taken Report not filed within 30 days, automatic escalation triggers &mdash; no action required from the citizen.</div>
+          </div>
+          <div class="tier-block">
+            <div class="tier-label">Tier 2 &mdash; 30 Days</div>
+            <div class="tier-heading">District Grievance Redress Officer</div>
+            <div class="tier-body">First appellate authority. Independent call centre quality check after resolution. If citizen reports unsatisfied, auto-escalation to Tier 3.</div>
+          </div>
+          <div class="tier-block">
+            <div class="tier-label">Tier 3 &mdash; 30 Days</div>
+            <div class="tier-heading">State Grievance Redress Cell</div>
+            <div class="tier-body">Final escalation. Social Audit Unit can trigger parallel review through published audit reports.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">The service blueprint made one thing visible that no one had named before: every point at which the system required the citizen to take action was a point at which the citizen could fall out of the service entirely. The design response was to remove as many of those points as possible and automate the rest.</div>
+  </div>
+</section>
+
+<!-- SECTION 3 &mdash; ATR DESIGN -->
+<section id="section-atr" class="section">
+  <div class="container">
+    <div class="section-label">03 &mdash; ATR Design</div>
+    <h2 class="section-title">Designing the Officer-Facing Interface</h2>
+    <p class="section-body">The Action Taken Report (ATR) is the digital form an investigating officer files to document how a complaint was investigated and resolved. In the existing system it was a blank paper form &mdash; no field-level logic, no mandatory evidence, no connection to the officer&rsquo;s digital identity. The redesign treated the ATR as a user-centred interface design problem with two users: the officer filing it, and the citizen and senior officials who would rely on what it contained. Below are the actual ATR form pages &mdash; produced as working documents for iterative testing with district officials &mdash; followed by five interaction design decisions that explain what changed and why.</p>
+
+    <h3 class="sub-heading">The Form</h3>
+
+    <div class="img-atr-stack">
+      <div id="placeholder-atr1" class="img-placeholder img-atr">
+        <span class="img-placeholder-text">[ATR Format &mdash; Page 1 &mdash; to be embedded]</span>
+      </div>
+      <div id="placeholder-atr2" class="img-placeholder img-atr">
+        <span class="img-placeholder-text">[ATR Format &mdash; Page 2 &mdash; to be embedded]</span>
+      </div>
+      <div id="placeholder-atr3" class="img-placeholder img-atr">
+        <span class="img-placeholder-text">[ATR Format &mdash; Page 3 &mdash; to be embedded]</span>
+      </div>
+    </div>
+    <p class="caption">Action Taken Report: officer-facing form co-designed with the Government of Haryana. Annotations in the original document specify field-level interaction logic: auto-populate rules, conditional routing, input type constraints, and timeline cascade logic. The form was tested iteratively with district officials through CM Window review meetings.</p>
+
+    <h3 class="sub-heading sub-heading-lg-gap">Five Interaction Design Decisions</h3>
+
+    <div class="decision-list">
+      <div class="decision-card">
+        <div class="decision-row">
+          <div class="decision-row-label">User Need Identified</div>
+          <div class="decision-row-body">Officers needed a format that made evidence mandatory, not optional. Senior officials needed to verify that investigations actually occurred.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Design Decision</div>
+          <div class="decision-row-body">Dual signatures made mandatory on the Final Report: both investigating officer and reporting officer must sign. Photographs from site visits auto-populate into the final report and cannot be removed before submission.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Rationale</div>
+          <div class="decision-row-body">Reporting officers were frequently unaware of how enquiries were conducted, enabling easy manipulation. Dual signatures created shared accountability. Photo auto-population closed the space between filing and evidence.</div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="decision-row">
+          <div class="decision-row-label">User Need Identified</div>
+          <div class="decision-row-body">Citizens needed proof of filing and a way to identify who was responsible and by when &mdash; without having to ask.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Design Decision</div>
+          <div class="decision-row-body">Mandatory acknowledgement receipt at the point of filing containing: unique complaint ID, official designation and contact of the assigned GRO, deadline for resolution, and instructions for filing a first appeal.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Rationale</div>
+          <div class="decision-row-body">The receipt is the citizen&rsquo;s primary instrument in the service journey. Every field was designed around a specific moment of uncertainty: Was it received? Who has it? By when? What if nothing happens?</div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="decision-row">
+          <div class="decision-row-label">User Need Identified</div>
+          <div class="decision-row-body">Citizens needed resolution to be verified by someone other than the officer who resolved the complaint.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Design Decision</div>
+          <div class="decision-row-body">Mandatory quality check call from an independent call centre after every ATR submission. If the citizen reports unsatisfied, the system auto-escalates rather than closing.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Rationale</div>
+          <div class="decision-row-body">Self-reported resolution data is worthless when the assessor is the same person who resolved the complaint. Independence of the quality check is what makes the data credible enough to act on.</div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="decision-row">
+          <div class="decision-row-label">User Need Identified</div>
+          <div class="decision-row-body">Officers needed a form that guided them through a complex process without requiring training they had not received.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Design Decision</div>
+          <div class="decision-row-body">Field-level interaction logic throughout: auto-populate from existing complaint data wherever possible; constrained drop-down inputs with manual override; calendar input for all dates; conditional routing if budget or policy related; automated timeline calculation.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Rationale</div>
+          <div class="decision-row-body">Every field requiring manual entry is an opportunity for error or avoidance. The form was designed to make the right action the easiest action.</div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="decision-row">
+          <div class="decision-row-label">User Need Identified</div>
+          <div class="decision-row-body">Complainants needed to participate meaningfully in public hearings, which required advance notice, access to their case file, and a public record of outcomes.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Design Decision</div>
+          <div class="decision-row-body">Mandatory SMS notification to complainants at least 48 hours before their case is discussed. Physical copy of ATR provided to the complainant during the hearing. Minutes published online and offline at the panchayat or ward office.</div>
+        </div>
+        <div class="decision-row">
+          <div class="decision-row-label">Rationale</div>
+          <div class="decision-row-body">A public hearing without informed complainants is a performance, not accountability. Each condition was tested against the question: what does the complainant need in order to show up and challenge the record?</div>
+        </div>
       </div>
     </div>
   </div>
