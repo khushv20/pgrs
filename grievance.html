@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Grievance Redress by Design — Khush Vachhrajani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #111111;
+    background-color: #FAF9F7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: normal;
+    color: #111111;
+    line-height: 1.1;
+  }
+
+  a {
+    color: #1F4E79;
+    text-decoration: none;
+  }
+
+  p {
+    color: #111111;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  /* Fixed Nav */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FAF9F7;
+    border-bottom: 2px solid #1F4E79;
+    z-index: 1000;
+  }
+
+  .site-nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .site-nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #1F4E79;
+  }
+
+  .site-nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .site-nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #111111;
+    letter-spacing: 0.02em;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .site-nav-links a:hover {
+    border-bottom-color: #1F4E79;
+  }
+
+  .site-nav-links a.active {
+    border-bottom-color: #1F4E79;
+    color: #1F4E79;
+  }
+
+  /* Offset for fixed nav when anchor-scrolling */
+  section[id] {
+    scroll-margin-top: 88px;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 24px;
+    }
+
+    .site-nav-inner {
+      padding: 14px 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .site-nav-links {
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    .site-nav-links a {
+      font-size: 12px;
+    }
+
+    section[id] {
+      scroll-margin-top: 140px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav-inner">
+    <div class="site-nav-logo">Khush Vachhrajani</div>
+    <ul class="site-nav-links">
+      <li><a href="#section-overview" data-target="section-overview">Overview</a></li>
+      <li><a href="#section-blueprint" data-target="section-blueprint">Service Blueprint</a></li>
+      <li><a href="#section-atr" data-target="section-atr">ATR Design</a></li>
+      <li><a href="#section-performance" data-target="section-performance">Performance System</a></li>
+      <li><a href="#section-outcomes" data-target="section-outcomes">Outcomes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- page content goes here -->
+
+<script>
+  (function () {
+    var navLinks = document.querySelectorAll('.site-nav-links a');
+
+    // Smooth scroll
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var id = link.getAttribute('data-target');
+        var el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + id);
+        }
+      });
+    });
+
+    // Active link via IntersectionObserver
+    var sections = document.querySelectorAll('section[id]');
+    if ('IntersectionObserver' in window && sections.length) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.id;
+            navLinks.forEach(function (l) {
+              if (l.getAttribute('data-target') === id) {
+                l.classList.add('active');
+              } else {
+                l.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+      sections.forEach(function (s) { observer.observe(s); });
+    }
+  })();
+</script>
+
+</body>
+</html>
