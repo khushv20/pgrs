@@ -434,6 +434,91 @@
     line-height: 1.6;
   }
 
+  /* Indicator grid (Performance) */
+  .indicator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .indicator-card {
+    border: 1px solid #DDDDDD;
+    padding: 24px;
+  }
+
+  .indicator-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1F4E79;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .indicator-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #111111;
+    margin-top: 8px;
+    line-height: 1.3;
+  }
+
+  .indicator-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #111111;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  .img-ranking {
+    height: 400px;
+    margin-top: 40px;
+  }
+
+  /* Photo row (Outcomes) */
+  .photo-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .photo-placeholder {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 260px;
+  }
+
+  /* Outcome cards */
+  .outcome-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .outcome-card {
+    border-left: 1px solid #1F4E79;
+    padding: 20px 24px;
+  }
+
+  .outcome-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.3;
+  }
+
+  .outcome-card p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #111111;
+    line-height: 1.6;
+  }
+
   /* Mobile */
   @media (max-width: 768px) {
     .container {
@@ -520,6 +605,22 @@
 
     .decision-card {
       padding: 24px 16px;
+    }
+
+    .indicator-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .img-ranking {
+      height: 280px;
+    }
+
+    .photo-row {
+      flex-direction: column;
+    }
+
+    .photo-placeholder {
+      height: 200px;
     }
   }
 </style>
@@ -742,6 +843,82 @@
           <div class="decision-row-label">Rationale</div>
           <div class="decision-row-body">A public hearing without informed complainants is a performance, not accountability. Each condition was tested against the question: what does the complainant need in order to show up and challenge the record?</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 &mdash; PERFORMANCE SYSTEM -->
+<section id="section-performance" class="section">
+  <div class="container">
+    <div class="section-label">04 &mdash; Performance System</div>
+    <h2 class="section-title">Making District Performance Visible</h2>
+    <p class="section-body">Designing the service was not enough. Without a performance measurement layer there was no structural pressure on district officials to improve. I co-designed a four-indicator composite score used in Chief Minister Window review meetings, ranking all 22 districts in Haryana on a public dashboard. The score was designed so districts could not game a single indicator: all four had to improve simultaneously to move up the ranking. The highest weighting was placed on on-time disposal because timely resolution is the primary purpose of the service.</p>
+
+    <div class="indicator-grid">
+      <div class="indicator-card">
+        <div class="indicator-label">Responsiveness &mdash; 20%</div>
+        <div class="indicator-heading">Average Days to Undertake</div>
+        <div class="indicator-body">Scored on a 10-point scale. Districts taking 0 to 4 days score 10. Districts taking 36 to 50 days receive minus 1. Chronic delays score minus 2 or minus 3. Penalty scoring was deliberate: delays should damage performance, not merely fail to improve it.</div>
+      </div>
+      <div class="indicator-card">
+        <div class="indicator-label">Quality &mdash; 25%</div>
+        <div class="indicator-heading">ATR Clarification Ratio</div>
+        <div class="indicator-body">Measures whether officers are filing complete, credible reports. If more clarifications are sought than ATRs sent, score is zero. This prevents high-volume, low-quality filing as a strategy.</div>
+      </div>
+      <div class="indicator-card">
+        <div class="indicator-label">Efficiency &mdash; 25%</div>
+        <div class="indicator-heading">Overdue Complaint Profile</div>
+        <div class="indicator-body">Percentage of overdue complaints in four time bands: under 1 month, 1 to 3 months, 3 to 6 months, over 6 months. Longer-overdue complaints are weighted more heavily.</div>
+      </div>
+      <div class="indicator-card">
+        <div class="indicator-label">On-Time Disposal &mdash; 30%</div>
+        <div class="indicator-heading">Complaints Resolved Within Deadline</div>
+        <div class="indicator-body">Highest weighting. Complaints disposed on time count at full value. Complaints disposed late count at half value. The asymmetry between timely and late disposal is intentional.</div>
+      </div>
+    </div>
+
+    <div id="placeholder-ranking" class="img-placeholder img-ranking">
+      <span class="img-placeholder-text">[CM Window District Ranking Table &mdash; image to be embedded]</span>
+    </div>
+    <p class="caption">CM Window District Wise Ranking, February 2021. Used in Chief Minister review meetings across 22 districts. Deputy Commissioner Ambala highlighted at rank 3.</p>
+
+    <div class="callout">The composite score was designed to be legible to a Chief Minister in a two-minute briefing and actionable for a District Collector in a planning meeting. Both users needed the same underlying data at different resolutions. The public ranking created competitive pressure between districts that had not previously existed.</div>
+  </div>
+</section>
+
+<!-- SECTION 5 &mdash; OUTCOMES -->
+<section id="section-outcomes" class="section">
+  <div class="container">
+    <div class="section-label">05 &mdash; Outcomes</div>
+    <h2 class="section-title">What Changed</h2>
+    <p class="section-body">The following changes were documented through CM Window review meetings, field observations, and social audit reports.</p>
+
+    <div class="photo-row">
+      <div id="placeholder-photo1" class="img-placeholder photo-placeholder">
+        <span class="img-placeholder-text">[Field photo &mdash; to be embedded]</span>
+      </div>
+      <div id="placeholder-photo2" class="img-placeholder photo-placeholder">
+        <span class="img-placeholder-text">[Field photo &mdash; to be embedded]</span>
+      </div>
+      <div id="placeholder-photo3" class="img-placeholder photo-placeholder">
+        <span class="img-placeholder-text">[Field photo &mdash; to be embedded]</span>
+      </div>
+    </div>
+    <p class="caption">Field documentation from community meetings, public hearings, and CM Window sessions.</p>
+
+    <div class="outcome-list">
+      <div class="outcome-card">
+        <h3>Competitive Accountability Between Districts</h3>
+        <p>The public ranking created performance pressure among District Commissioners that had not previously existed. Districts in the bottom half proactively increased ATR filing rates and reduced overdue complaints before the next review cycle.</p>
+      </div>
+      <div class="outcome-card">
+        <h3>Citizen Participation in Public Hearings</h3>
+        <p>Mandatory SMS notification and physical ATR copy requirements changed how complainants experienced the service. Citizens arrived at hearings with their acknowledgement receipts and used portal printouts to directly challenge officers on documented discrepancies.</p>
+      </div>
+      <div class="outcome-card">
+        <h3>Service Architecture Adopted in Karnataka</h3>
+        <p>The service blueprint &mdash; six-touchpoint model, three-tier escalation structure, and ATR interaction specifications &mdash; was adopted as the framework for Karnataka&rsquo;s integrated grievance redress platform, adapted through similar user-centred co-design processes.</p>
       </div>
     </div>
   </div>
